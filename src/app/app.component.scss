@@ -1,0 +1,30 @@
+
+/* Application-wide Styles */
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'Source Sans Pro', sans-serif, Arial, Helvetica;
+    font-size: 250%;
+  }
+  h2, h3 {
+    color: rgb(255, 255, 255);
+    font-family: 'Source Sans Pro', sans-serif, Arial, Helvetica;
+    font-weight: lighter;
+  }
+  body {
+    margin: 2em;
+  }
+  body, input[type="text"], button {
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif, Arial, Helvetica;
+  }
+  /* everywhere else */
+  * {
+    font-family: 'Source Sans Pro', sans-serif, Arial, Helvetica;
+  }
+
+  .h1Title, .searchComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
