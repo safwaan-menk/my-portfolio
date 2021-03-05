@@ -1,4 +1,4 @@
 <label for='ticker-search'></label>
-<input #tickerName pInputText  id='ticker-search' placeholder="Search for a stockticker">
+<input #tickerName pInputText (keyup.enter)="getTickerData(tickerName.value)" id='ticker-search' placeholder="Search for a stockticker">
 <button pButton label="add" class="p-button-raised" (click)="getTickerData(tickerName.value)"></button>
 <button pButton label="delete" class="p-button-raised p-button-danger"></button>
