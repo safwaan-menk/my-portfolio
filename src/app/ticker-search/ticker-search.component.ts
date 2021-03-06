@@ -9,10 +9,12 @@ import { TickerService } from '../services/ticker.service'
 })
 export class TickerSearchComponent implements OnInit {
   @Output() tickerDetailsEvent = new EventEmitter<any>();
-  @Output() companyDomainAndLogoEvent = new EventEmitter<any>();
+  @Output() tickerFinancialsEvent = new EventEmitter<any>();
+  
+  // TODO: update when i figure out how to customize
+  availableFinancialData:any = [];
 
 
-  responseObject = {};
 
   constructor(private tickerService: TickerService) { }
 
@@ -21,11 +23,20 @@ export class TickerSearchComponent implements OnInit {
 
   getTickerData(ticker: string) {
     this.tickerService.getTickerData(ticker).subscribe((response: any) => {
-      this.tickerService.getDomainAndLogo(response.companyName.split(" ")[0]).subscribe((response: any) => {
-        this.companyDomainAndLogoEvent.emit(response);
-      })
-      this.tickerDetailsEvent.emit(response)
-    })
+      this.tickerDetailsEvent.emit(response);
+    });
+    this.tickerService.getTickerAdvancedStatsData(ticker).subscribe((response: any) => {
+      this.availableFinancialData.push(response.revenue ? response.revenue : 0);
+      this.availableFinancialData.push(response.pegRatio ? response.pegRatio : 0);
+      this.availableFinancialData.push(response.totalCash ? response.totalCash : 0);
+    });
+    this.tickerService.getTickerFinancialData(ticker).subscribe((response: any) => {
+      this.availableFinancialData.push(response.financials[0].cashFlow ? response.financials[0].cashFlow : 0);
+      this.availableFinancialData.push(response.financials[0].longTermDebt ? response.financials[0].longTermDebt : 0);
+      this.availableFinancialData.push(response.financials[0].totalDebt ? response.financials[0].totalDebt : 0);
+
+    });
+    this.tickerFinancialsEvent.emit(this.availableFinancialData);
   }
 
 }

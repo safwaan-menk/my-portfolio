@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TickerDetailsComponent implements OnInit {
 
   @Input() tickerData: any;
-  @Input() companyDomainAndLogo: any; 
+  @Input() tickerFinancials: any;
   constructor() { }
+
 
   ngOnInit(): void {
   }
