@@ -1,4 +1,11 @@
-<span>
-    <img src="{{companyDomainAndLogo[0].logo}}">
-    <h3> {{ tickerData.latestPrice }} </h3>
- </span>
+<div class="tickerDetailsParent">
+    <img style="padding-top:10px; width: 100px; height: 100px" src="https://storage.googleapis.com/iex/api/logos/{{tickerData.symbol}}.png" alt="">
+    <h3 style="margin-top: -.00175px;"> {{ tickerData.companyName }} </h3>
+    <div class="tickerAndPrice"> 
+        <span> {{ tickerData.symbol }} </span>
+        <span> {{ tickerData.latestPrice }} </span>
+    </div>
+    <div *ngIf=(tickerFinancials) class="financials">
+        <app-ticker-financial-data  [tickerFinancials]="tickerFinancials"> </app-ticker-financial-data>
+    </div>
+</div>

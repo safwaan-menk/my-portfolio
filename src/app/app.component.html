@@ -1,10 +1,10 @@
 <div class="p-gird p-align-center">
     <h1 class="h1Title"> {{ title }} </h1>
     <div classs="p-col" class="searchComponent"> 
-        <app-ticker-search (tickerDetailsEvent)="getTickerData($event)" (companyDomainAndLogoEvent)="getCompanyDomainAndLogo($event)"></app-ticker-search>
+        <app-ticker-search (tickerDetailsEvent)="getTickerData($event)" (tickerFinancialsEvent)="getTickerFinancials($event)"></app-ticker-search>
     </div>
     <div classs="p-col">
-        <app-ticker-grid class="searchComponent" [companyDomainAndLogo]="companyDomainAndLogo" [tickerData]="tickerData"> </app-ticker-grid>
+        <app-ticker-grid class="searchComponent" [tickerFinancials]="tickerFinancials" [tickerData]="tickerData"> </app-ticker-grid>
     </div>
 </div>
 

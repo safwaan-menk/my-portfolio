@@ -8,13 +8,13 @@ import { TickerSearchComponent } from './ticker-search/ticker-search.component';
 })
 export class AppComponent {
   tickerData: any;
-  companyDomainAndLogo: any;
+  tickerFinancials: any = [];
   title = 'My Portfolio';
 
   getTickerData(tickerData: any){
     this.tickerData = tickerData;
   }
-  getCompanyDomainAndLogo(companyDomainAndLogo: any) {
-    this.companyDomainAndLogo = companyDomainAndLogo;
+  getTickerFinancials(tickerFinancials: any) {
+    this.tickerFinancials = tickerFinancials;
   }
 }

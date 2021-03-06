@@ -13,7 +13,3 @@ export const token = 'pk_600c496e3fce46c395ed2a1a7f60412a';
 export const secret = 'sk_ef440c4054e543e693f422d076a1f8ae';
 export const baseUrl = 'https://cloud.iexapis.com/stable/';
 */
-
-export const LogoAPI = {
-     baseUrl: 'https://autocomplete.clearbit.com/v1/companies/suggest?query=',
-}

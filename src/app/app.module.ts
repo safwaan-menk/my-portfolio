@@ -11,6 +11,9 @@ import { ButtonModule } from 'primeng/button';
 import { HttpClient, HttpClientModule,  } from '@angular/common/http';
 import { TickerDetailsComponent } from './ticker-grid/ticker-details/ticker-details.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TickerFinancialDataComponent } from './ticker-grid/ticker-details/ticker-financial-data/ticker-financial-data.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TickerGridComponent,
     TickerSearchComponent,
     TickerDetailsComponent,
+    TickerFinancialDataComponent,
     
   ],
   imports: [
@@ -27,7 +31,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     InputTextModule, 
     ButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
   ],
   providers: [
     TickerService,
