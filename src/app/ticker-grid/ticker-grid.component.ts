@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LogoAPI } from '../config/constants';
 import { TickerService } from '../services/ticker.service'
 
 
@@ -11,7 +10,7 @@ import { TickerService } from '../services/ticker.service'
 })
 export class TickerGridComponent implements OnInit {
    @Input() tickerData: any;
-   @Input() companyDomainAndLogo: any;
+   @Input() tickerFinancials: any;
 
 
    
@@ -19,7 +18,6 @@ export class TickerGridComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.companyDomainAndLogo.logo)
   }
 
 }
